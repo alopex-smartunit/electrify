@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.9.0",
-    "electron-packager": "^5.2.1",
+    "electron-packager": "^8.3.0",
     "electron-prebuilt": "^1.4.10",
     "lodash": "^3.10.1",
     "server-destroy": "^1.0.1",
