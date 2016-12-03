@@ -12,13 +12,13 @@
   "author": "Anderson Arboleya <anderson@arboleya.me>",
   "license": "MIT",
   "dependencies": {
-    "commander": "^2.8.1",
-    "electron-packager": "^5.1.1",
-    "electron-prebuilt": "^1.4.8",
+    "commander": "^2.9.0",
+    "electron-packager": "^5.2.1",
+    "electron-prebuilt": "^1.4.10",
     "lodash": "^3.10.1",
     "server-destroy": "^1.0.1",
     "shelljs": "^0.5.3",
-    "sockjs": "^0.3.15"
+    "sockjs": "^0.3.18"
   },
   "devDependencies": {
     "codeclimate-test-reporter": "^0.1.1",
