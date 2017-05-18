@@ -59,7 +59,7 @@ program.parse(process.argv);
 
 // default command = run
 var cmd = process.argv[2];
-if(process.argv.length == 2 || -1 == 'run|bundle|package'.indexOf(cmd) ){
+if(process.argv.length == 2 || -1 == 'run|bundle|package|cinet'.indexOf(cmd) ){
   run();
 }
 
@@ -104,7 +104,24 @@ function package(){
   electrify().app.package(parse_packager_options());
 }
 
-
+function cinet(){
+  electrify().app.package(parse_packager_options(), function() {
+    log('finishing...');
+    const input_dir = program.input || process.cwd();
+    const output_dir = join(input_dir, '.electrify/.dist/cinet-win32-x64');
+    shell.mkdir(join(output_dir, 'data'));
+    shell.mkdir(join(output_dir, 'data/posters'));
+    shell.mkdir(join(output_dir, 'data/seances'));
+    shell.mkdir(join(output_dir, 'data/sales'));
+    shell.mkdir(join(output_dir, 'data/rentrak'));
+    shell.mkdir(join(output_dir, 'log'));
+    shell.cp(join(input_dir, 'data/rentrak/template.xlsx'), join(output_dir, 'data/rentrak'));
+    shell.rm('-f', join(output_dir, 'resources/app/app/settings.json'));
+    shell.cp(join(input_dir, 'settings.json'), join(output_dir, 'resources/app/app'));
+    shell.rm('-f', join(output_dir, 'resources/app/bin/mongo*'));
+    shell.cp(join(input_dir, 'data/dist/mongo/*'), join(output_dir, 'resources/app/bin'));
+  });
+}
 
 function electrify(create) {
   var input;
