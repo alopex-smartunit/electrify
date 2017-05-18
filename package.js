@@ -1,10 +1,10 @@
 var VERSION = '2.1.4';
 
 Package.describe({
-  name: 'arboleya:electrify',
+  name: 'alopex-smartunit:electrify',
   version: VERSION,
-  summary: 'Package your Meteor apps with Electron, and butter.',
-  git: 'https://github.com/arboleya/electrify',
+  summary: 'Package your Meteor apps with Electron (forked for cinet bundling).',
+  git: 'https://github.com/alopex-smartunit/electrify',
   documentation: 'README.md'
 });
 
