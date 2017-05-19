@@ -120,6 +120,9 @@ function cinet(){
     shell.mkdir(join(output_dir, 'data/sales'));
     shell.mkdir(join(output_dir, 'data/rentrak'));
     shell.mkdir(join(output_dir, 'log'));
+    shell.mkdir(join(output_dir, 'public'));
+    shell.mkdir(join(output_dir, 'public/fonts'));
+    shell.cp(join(input_dir, 'public/fonts/'), join(output_dir, 'public/fonts'));
     shell.cp(join(input_dir, 'data/rentrak/template.xlsx'), join(output_dir, 'data/rentrak'));
     shell.rm('-f', join(output_dir, 'resources/app/app/settings.json'));
     shell.cp(join(input_dir, 'settings.json'), join(output_dir, 'resources/app/app'));
