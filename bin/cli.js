@@ -54,6 +54,11 @@ program
   .description('bundle and package app to `--output` dir')
   .action(package);
 
+program
+  .command('cinet')
+  .description('bundle and package cinet app')
+  .action(cinet);
+
 program.parse(process.argv);
 
 
